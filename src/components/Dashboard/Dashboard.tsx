@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+
 import {
   AlignLeft,
   Bell,
@@ -7,17 +9,10 @@ import {
   LogOut,
   Package,
   Settings,
+  UserRound,
 } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import {
   Sheet,
   SheetContent,
@@ -61,6 +56,7 @@ const links: {
 const user: {
   name: string;
   email: string;
+  img?: string;
 } = {
   name: "Jhon Doe",
   email: "jhon-doe@gmail.com",
@@ -71,8 +67,26 @@ export function Dashboard() {
     <div className="grid min-h-screen w-full md:grid-cols-[320px_1fr] lg:grid-cols-[380px_1fr]">
       <Sidebar>
         <SidebarUser>
-          <SidebarUserName>{user.name}</SidebarUserName>
-          <SidebarUserEmail>{user.email}</SidebarUserEmail>
+          <Link href="#" className="flex items-center gap-2 font-semibold">
+            {user.img ? (
+              <Image
+                width={56}
+                height={56}
+                alt="User Avatar"
+                src={user.img}
+                className="h-14 w-14 rounded-full"
+              />
+            ) : (
+              <UserRound
+                strokeWidth={1}
+                className="h-14 w-14 bg-muted rounded-full p-2"
+              />
+            )}
+          </Link>
+          <div className="flex flex-col">
+            <SidebarUserName>{user.name}</SidebarUserName>
+            <SidebarUserEmail>{user.email}</SidebarUserEmail>
+          </div>
         </SidebarUser>
 
         <SidebarMenu>
