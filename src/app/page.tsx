@@ -1,6 +1,7 @@
 import { Dashboard } from "@/components/Dashboard/Dashboard";
-import { Button } from "@/components/ui/button";
+import { redirect } from "next/navigation";
 
 export default function Home() {
+  redirect("dashboard/counter");
   return <Dashboard></Dashboard>;
 }
