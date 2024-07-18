@@ -7,7 +7,7 @@ import {
   SidebarUserName,
 } from "@/components/Dashboard";
 import { ThemeToggle } from "@/components/ThemeToggle/ThemeToggle";
-import { Calculator, UserRound } from "lucide-react";
+import { Calculator, LayoutDashboard, UserRound } from "lucide-react";
 import Image from "next/image";
 
 import Link from "next/link";
@@ -17,6 +17,11 @@ const links: {
   title: string;
   icon: React.ReactNode;
 }[] = [
+  {
+    path: "/dashboard/main",
+    title: "Dashboard",
+    icon: <LayoutDashboard className="h-6 w-6" />,
+  },
   {
     path: "/dashboard/counter",
     title: "Counter",
@@ -67,7 +72,7 @@ export default function DashboardLayout({
 
         <SidebarMenu>
           {links.map(({ path, icon, title }) => (
-            <Link href={path} key={title}>
+            <Link href={path} key={title} prefetch={true}>
               <SidebarLink path={path}>
                 {icon}
                 {title}
