@@ -64,7 +64,7 @@ const user: {
 
 export function Dashboard() {
   return (
-    <div className="grid min-h-screen w-full md:grid-cols-[320px_1fr] lg:grid-cols-[380px_1fr]">
+    <div className="grid min-h-screen w-full md:grid-cols-[300px_1fr] lg:grid-cols-[320px_1fr]">
       <Sidebar>
         <SidebarUser>
           <Link href="#" className="flex items-center gap-2 font-semibold">

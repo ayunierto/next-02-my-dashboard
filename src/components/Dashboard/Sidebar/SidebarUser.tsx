@@ -10,7 +10,7 @@ const SidebarUser = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={`flex gap-2 h-20 items-center px-2 lg:h-[60px] lg:px-6 hover:bg-muted m-2 rounded-md ${className}`}
+    className={`flex gap-2 items-center p-2 hover:bg-muted m-2 rounded-md ${className}`}
     {...props}
   />
 ));
