@@ -7,7 +7,13 @@ import {
   SidebarUserName,
 } from "@/components/Dashboard";
 import { ThemeToggle } from "@/components/ThemeToggle/ThemeToggle";
-import { Calculator, Dog, LayoutDashboard, UserRound } from "lucide-react";
+import {
+  Calculator,
+  Dog,
+  LayoutDashboard,
+  Star,
+  UserRound,
+} from "lucide-react";
 import Image from "next/image";
 
 import Link from "next/link";
@@ -31,6 +37,11 @@ const links: {
     path: "/dashboard/pokemons",
     title: "Pokemons",
     icon: <Dog className="h-6 w-6" />,
+  },
+  {
+    path: "/dashboard/favorites",
+    title: "Favorites",
+    icon: <Star className="h-6 w-6" />,
   },
 ];
 

@@ -1,4 +1,4 @@
-import { CardCounter } from "./components";
+import { CardCounter } from "../../../counter";
 
 export const metadata = {
   title: "Counter page",

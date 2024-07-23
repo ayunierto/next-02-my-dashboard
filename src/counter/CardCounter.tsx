@@ -2,15 +2,20 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import React, { useState } from "react";
+import {
+  decreaseByOne,
+  increaseByOne,
+  reset,
+} from "@/store/counter/counterSlice";
+import { useAppDispatch, useAppSelector } from "@/store/store";
 
 interface CardCounterProps {
   value?: number;
 }
 
 export const CardCounter = ({ value = 10 }: CardCounterProps) => {
-  const [counter, setcounter] = useState(value);
-
+  const counter = useAppSelector((state) => state.counter.value);
+  const dispatch = useAppDispatch();
   return (
     <Card className="min-w-72 flex flex-col items-center shadow-2xl">
       <CardHeader>
@@ -19,17 +24,14 @@ export const CardCounter = ({ value = 10 }: CardCounterProps) => {
       <CardContent className="w-full flex flex-col items-center ">
         <span className="text-9xl">{counter}</span>
         <div className="flex flex-row gap-1 w-full">
-          <Button
-            onClick={() => setcounter((prev) => prev + 1)}
-            className="w-full"
-          >
+          <Button onClick={() => dispatch(increaseByOne())} className="w-full">
             +1
           </Button>
-          <Button
-            onClick={() => setcounter((prev) => prev - 1)}
-            className="w-full"
-          >
+          <Button onClick={() => dispatch(decreaseByOne())} className="w-full">
             -1
+          </Button>
+          <Button onClick={() => dispatch(reset(0))} className="w-full">
+            Reset
           </Button>
         </div>
       </CardContent>

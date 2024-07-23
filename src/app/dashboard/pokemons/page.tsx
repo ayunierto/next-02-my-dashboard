@@ -1,7 +1,7 @@
 import { PokemonsGrid, PokemonsResponse, SimplePokemon } from "@/pokemons";
 
 export const metadata = {
-  title: "Pokemons page",
+  title: "List of Pokemons",
   description: "Pokemons page",
 };
 
@@ -28,7 +28,8 @@ export default async function PokemonsPage() {
   return (
     <div>
       <h1 className="text-xl mb-2">
-        List of Pokemons <span className="text-sm">(static)</span>
+        List of Pokemons{"  "}
+        <span className="text-sm text-indigo-800">(static)</span>
       </h1>
       <PokemonsGrid pokemons={pokemons} />
     </div>
