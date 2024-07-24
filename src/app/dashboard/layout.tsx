@@ -72,6 +72,7 @@ export default function DashboardLayout({
                 alt="User Avatar"
                 src={user.img}
                 className="h-14 w-14 rounded-full"
+                priority
               />
             ) : (
               <UserRound

@@ -60,6 +60,7 @@ export default async function PokemonPage({ params }: Props) {
             alt="pokemon"
             width={200}
             height={200}
+            priority
           />
           <Link
             href={"/dashboard/pokemons"}
